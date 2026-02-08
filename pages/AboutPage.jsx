@@ -173,16 +173,16 @@ const AboutPage = () => {
             <div className="contact-card">
               <h3>Devansh Singh</h3>
               <p>Organizer</p>
-              <span>📞 870971745</span>
-              <span>📧 devanshsinghr@gmail.com</span>
+              <span>+91 870971745</span>
+              <span>devanshsinghr@gmail.com</span>
             </div>
             
             {/* Kunal */}
             <div className="contact-card">
               <h3>Kunal</h3>
               <p>Organizer</p>
-              <span>📧 globalhackcraft@gitmgurugram.com</span>
-              <span>🔗 linkedin.com/in/kunal-biserwal-b2a70528a</span>
+              <span>globalhackcraft@gitmgurugram.com</span>
+              <span>linkedin.com/in/kunal-biserwal-b2a70528a</span>
             </div>
           </div>
         </div>
