@@ -240,7 +240,7 @@ img {
 /* ===== COUNTDOWN ===== */
 .countdown-container {
   display: flex;
-  gap: clamp(0.6rem, 2vw, 1rem);
+  gap: clamp(0.5rem, 2vw, 1rem);
   justify-content: center;
   margin-top: clamp(1.5rem, 4vw, 2rem);
   padding: clamp(0.8rem, 2vw, 1rem);
