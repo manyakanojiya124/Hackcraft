@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 import gitmLogo from "../images/GITM_Logo.jpg";
@@ -9,6 +10,11 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+
+  // Scroll Function
   const scrollToSection = (id) => {
 
     const element = document.getElementById(id);
@@ -18,10 +24,32 @@ function Navbar() {
         behavior: "smooth",
         block: "start"
       });
+    }
 
-      setMenuOpen(false); // close menu on click
+    setMenuOpen(false);
+  };
+
+
+  // Smart Navigation (Scroll + Route)
+  const handleNavClick = (id, path = "/") => {
+
+    if (location.pathname === path) {
+
+      // Already on page → scroll
+      scrollToSection(id);
+
+    } else {
+
+      // Go to home first
+      navigate(path);
+
+      // Wait for render then scroll
+      setTimeout(() => {
+        scrollToSection(id);
+      }, 300);
     }
   };
+
 
   return (
     <>
@@ -33,7 +61,7 @@ function Navbar() {
         {/* ===== LEFT LOGOS ===== */}
         <div
           className="nav-logos"
-          onClick={() => scrollToSection("home")}
+          onClick={() => handleNavClick("home")}
         >
 
           <img src={gitmLogo} alt="GITM" className="nav-logo gitm-logo" />
@@ -52,15 +80,40 @@ function Navbar() {
         {/* ===== CENTER LINKS (DESKTOP) ===== */}
         <div className="nav-links desktop-links">
 
-          <span onClick={() => scrollToSection("home")} className="nav-link">Home</span>
+          <span
+            onClick={() => handleNavClick("home")}
+            className="nav-link"
+          >
+            Home
+          </span>
 
-          <span onClick={() => scrollToSection("about")} className="nav-link">About</span>
+          <span
+            onClick={() => handleNavClick("about")}
+            className="nav-link"
+          >
+            About
+          </span>
 
-          <span onClick={() => scrollToSection("timeline")} className="nav-link">Timeline</span>
+          <span
+            onClick={() => handleNavClick("timeline")}
+            className="nav-link"
+          >
+            Timeline
+          </span>
 
-          <span onClick={() => scrollToSection("team")} className="nav-link">Team</span>
+          <span
+            onClick={() => handleNavClick("team")}
+            className="nav-link"
+          >
+            Team
+          </span>
 
-          <span onClick={() => scrollToSection("profile")} className="nav-link">Themes</span>
+          <span
+            onClick={() => handleNavClick("profile")}
+            className="nav-link"
+          >
+            Themes
+          </span>
 
         </div>
 
@@ -71,6 +124,7 @@ function Navbar() {
           <button className="sign-in-btn desktop-btn">
             Coming Soon
           </button>
+
 
           {/* Hamburger */}
           <div
@@ -92,15 +146,15 @@ function Navbar() {
       {/* ================= MOBILE MENU ================= */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
 
-        <span onClick={() => scrollToSection("home")}>Home</span>
+        <span onClick={() => handleNavClick("home")}>Home</span>
 
-        <span onClick={() => scrollToSection("about")}>About</span>
+        <span onClick={() => handleNavClick("about")}>About</span>
 
-        <span onClick={() => scrollToSection("timeline")}>Timeline</span>
+        <span onClick={() => handleNavClick("timeline")}>Timeline</span>
 
-        <span onClick={() => scrollToSection("team")}>Team</span>
+        <span onClick={() => handleNavClick("team")}>Team</span>
 
-        <span onClick={() => scrollToSection("profile")}>Themes</span>
+        <span onClick={() => handleNavClick("profile")}>Themes</span>
 
         <button className="sign-in-btn mobile-btn">
           Coming Soon
