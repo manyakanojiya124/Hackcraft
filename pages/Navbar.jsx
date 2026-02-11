@@ -122,7 +122,7 @@ function Navbar() {
         <div className="nav-right">
 
           <button className="sign-in-btn desktop-btn">
-            Coming Soon
+            Register Now
           </button>
 
 
