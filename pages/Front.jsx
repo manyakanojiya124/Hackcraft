@@ -137,8 +137,6 @@ function Front() {
         </div>
 
 
-
-
         <section id="profile">
           <Profile />
         </section>

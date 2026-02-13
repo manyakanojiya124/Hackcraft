@@ -98,7 +98,15 @@ const teamData = [
     role: "Media Lead",
     image: img104,
     linkedin: "#"
-  }
+  },
+
+  {
+    id: 13,
+    name: "Luv",
+    role: "Tech Lead",
+    image: img105,
+    linkedin: "https://www.linkedin.com/in/luv-kumar-26570b28a/"
+  },
 ];
 
 function Team() {
