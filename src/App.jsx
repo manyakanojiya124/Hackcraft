@@ -10,6 +10,7 @@ import AboutPage from "../pages/AboutPage";
 import Navbar from "../pages/Navbar";
 import Profilez from "../pages/Profilez";
 import Footer from "../pages/Footer";
+import ChatBot from "../src/components/Chatbot";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,6 +21,7 @@ function App() {
 
       {/* ✅ NAVBAR ALWAYS ON TOP */}
       <Navbar />
+      <ChatBot />
 
       {/* ✅ ROUTES */}
       <Routes>
