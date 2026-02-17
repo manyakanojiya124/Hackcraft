@@ -837,3 +837,58 @@ body {
   background: var(--neon-secondary);
   box-shadow: 0 0 10px var(--neon-secondary);
 }
+
+/* ========================================== */
+/* 🔥 SHARDEUM SPECIAL SPONSOR TRACK STYLES */
+/* ========================================== */
+
+.special-track {
+  border: 2px solid #6200ff !important;
+  box-shadow: 
+    0 0 25px rgba(255, 0, 255, 0.4),
+    inset 0 0 20px rgba(217, 0, 255, 0.1);
+  position: relative;
+}
+
+.special-track::before {
+  content: "SPONSOR TRACK";
+  position: absolute;
+  top: 30px;
+  left: -35px;
+  transform: rotate(-45deg);
+  background: #9500ff;
+  color: #000;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.2rem 2.5rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 10px #9500ff;
+  z-index: 5;
+}
+
+.special-track:hover {
+  box-shadow: 
+    0 0 40px rgba(217, 0, 255, 0.7),
+    inset 0 0 30px rgba(179, 0, 255, 0.2);
+}
+
+/* Special Popup Highlight */
+.popup-title:has(+ .popup-theme-tag:contains("Web3")) {
+  text-shadow: 0 0 20px #cc00ff;
+}
+
+/* ========================================== */
+/* FIX FOR LANDSCAPE SHARDEUM LOGO */
+/* ========================================== */
+
+.landscape-logo {
+  object-fit: contain !important;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Optional: Slightly adjust container for sponsor track */
+.special-track .image-container {
+  background: rgba(149, 0, 255, 0.08);
+}

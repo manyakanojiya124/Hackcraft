@@ -8,6 +8,8 @@ import img2 from '../images/211.png';
 import img3 from '../images/212.png';
 import img4 from '../images/213.png';
 import img5 from '../images/214.png';
+import img6 from '../images/Shardeum.png'; // 🔥 SHARDEUM SPECIAL TRACK
+
 
 const Profile = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -53,7 +55,16 @@ const Profile = () => {
       description: 'Comming Soon!',
       theme: 'Healthcare',
       problemStatement: 'Comming Soon!'
-    }
+    },
+    {
+  id: 6,
+  name: "Shardeum's Special Web3",
+  image: img6,
+  description: "A special Web3 sponsor track powered by Shardeum. Build decentralized applications, smart contracts, DeFi solutions, or blockchain-based innovations using Shardeum ecosystem tools.",
+  theme: "Web3 - Sponsor Track",
+  problemStatement: "Build an innovative Web3 solution on Shardeum blockchain. Teams selecting this track will compete for special prizes, exclusive goodies, official recognition, and potential ecosystem opportunities directly from Shardeum."
+}
+
   ];
 
   const openPopup = (exhibitor) => {
@@ -84,7 +95,7 @@ const Profile = () => {
           {exhibitors.map((exhibitor, index) => (
             <div
               key={exhibitor.id}
-              className={`exhibitor-card ${hoveredCard === exhibitor.id ? 'hovered' : ''}`}
+className={`exhibitor-card ${exhibitor.id === 6 ? 'special-track' : ''} ${hoveredCard === exhibitor.id ? 'hovered' : ''}`}
               onMouseEnter={() => setHoveredCard(exhibitor.id)}
               onMouseLeave={() => setHoveredCard(null)}
               onClick={() => openPopup(exhibitor)}
@@ -101,7 +112,12 @@ const Profile = () => {
 
               <div className="card-content">
                 <div className="image-container">
-                  <img src={exhibitor.image} alt={exhibitor.name} className="exhibitor-image" />
+                  <img 
+  src={exhibitor.image} 
+  alt={exhibitor.name} 
+  className={`exhibitor-image ${exhibitor.id === 6 ? 'landscape-logo' : ''}`} 
+/>
+
                 </div>
 
                 <div className="card-footer">
