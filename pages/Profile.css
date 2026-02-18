@@ -892,3 +892,63 @@ body {
 .special-track .image-container {
   background: rgba(149, 0, 255, 0.08);
 }
+
+.popup-text {
+  white-space: pre-line;
+}
+
+/* =============================== */
+/* 🚀 PROBLEM STATEMENT STYLING */
+/* =============================== */
+
+.problem-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.problem-item {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  border: 1px solid rgba(var(--neon-primary-rgb), 0.4);
+  background: rgba(var(--neon-primary-rgb), 0.05);
+  color: var(--text-primary);
+  text-shadow: 0 0 6px var(--neon-primary);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.problem-item:hover {
+  background: rgba(var(--neon-primary-rgb), 0.15);
+  box-shadow: 0 0 15px rgba(var(--neon-primary-rgb), 0.6);
+  transform: translateX(5px);
+}
+
+/* 🔥 Alactic AGI Highlight */
+.agi-highlight {
+  border-color: #ff00cc;
+  background: rgba(255, 0, 204, 0.08);
+  text-shadow: 0 0 8px #ff00cc;
+  box-shadow: 0 0 10px rgba(255, 0, 204, 0.4);
+}
+
+/* 💜 Web3 Sponsor Highlight */
+.web3-highlight {
+  border-color: #9500ff;
+  background: rgba(149, 0, 255, 0.08);
+  text-shadow: 0 0 8px #cc00ff;
+}
+
+/* Web3 + AGI Combined */
+.web3-highlight.agi-highlight {
+  border-color: #cc00ff;
+  background: rgba(204, 0, 255, 0.12);
+  box-shadow: 0 0 20px rgba(204, 0, 255, 0.6);
+}
+
+
+

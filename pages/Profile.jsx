@@ -15,57 +15,94 @@ const Profile = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [selectedExhibitor, setSelectedExhibitor] = useState(null);
 
-  const exhibitors = [
-    {
-      id: 1,
-      name: 'AI',
-      image: img1,
-      description: 'Comming Soon!',
-      theme: 'AI',
-      problemStatement: 'Comming Soon!'
-    },
-    {
-      id: 2,
-      name: 'Cybersecurity',
-      image: img2,
-      description: 'Comming Soon!',
-      theme: 'Cybersecurity',
-      problemStatement: 'Comming Soon!'
-    },
-    {
-      id: 3,
-      name: 'IOT',
-      image: img3,
-      description: 'Comming Soon!',
-      theme: 'IOT',
-      problemStatement: 'Comming Soon!'
-    },
-    {
-      id: 4,
-      name: 'FINANCE',
-      image: img4,
-      description: 'Comming Soon!',
-      theme: 'FINANCE',
-      problemStatement: 'Comming Soon!'
-    },
-    {
-      id: 5,
-      name: 'Healthcare',
-      image: img5,
-      description: 'Comming Soon!',
-      theme: 'Healthcare',
-      problemStatement: 'Comming Soon!'
-    },
-    {
-  id: 6,
-  name: "Shardeum's Special Web3",
-  image: img6,
-  description: "A special Web3 sponsor track powered by Shardeum. Build decentralized applications, smart contracts, DeFi solutions, or blockchain-based innovations using Shardeum ecosystem tools.",
-  theme: "Web3 - Sponsor Track",
-  problemStatement: "Build an innovative Web3 solution on Shardeum blockchain. Teams selecting this track will compete for special prizes, exclusive goodies, official recognition, and potential ecosystem opportunities directly from Shardeum."
-}
+const exhibitors = [
+  {
+    id: 1,
+    name: 'AI',
+    image: img1,
+    theme: 'AI',
+    description: 'Artificial Intelligence solutions addressing education, governance, behavioral intelligence, energy forecasting, and structured AI data pipelines.',
+    problemStatements: [
+      "AIP01: Context-Aware Academic & Research Knowledge Extraction",
+      "AIP02: Early Detection of Online Behavioral Risk Patterns",
+      "AIP03: AI-Driven Energy Demand Forecasting for Micro-Communities",
+      "AIP04: Real-Time Multilingual Public Communication Intelligence",
+      "AIP05 (Alactic AGI Integrated): Automated Grounding of Unstructured Research Data for Domain-Specific LLMs"
+    ]
+  },
+  {
+    id: 2,
+    name: 'Cybersecurity',
+    image: img2,
+    theme: 'Cybersecurity',
+    description: 'Advanced cyber defense systems for deepfake detection, fraud intelligence, identity protection, and automated security intelligence structuring.',
+    problemStatements: [
+      "CSP01: Real-Time Detection of Deepfake and AI-Generated Misinformation",
+      "CSP02: Behavioral Anomaly Detection in Financial Transactions",
+      "CSP03: Secure Digital Identity for Public Service Access",
+      "CSP04: Critical Infrastructure Threat Monitoring",
+      "CSP05 (Alactic AGI Integrated): Automated Intelligence Extraction from Security Incident Reports"
+    ]
+  },
+  {
+    id: 3,
+    name: 'IoT',
+    image: img3,
+    theme: 'IoT',
+    description: 'Smart infrastructure and sensor-driven intelligence systems.',
+    problemStatements: [
+      "IOTP01: Urban Water Leakage and Distribution Inefficiency Monitoring",
+      "IOTP02: Smart Waste Segregation and Collection Optimization",
+      "IOTP03: Environmental Air Quality Intelligence in Dense Urban Areas",
+      "IOTP04: Cold Chain Monitoring for Perishable Goods in Transit",
+      "IOTP05 (Alactic AGI Integrated): Structuring Multi-Source Sensor Documentation"
+    ]
+  },
+  {
+    id: 4,
+    name: 'Finance',
+    image: img4,
+    theme: 'Finance',
+    description: 'AI-driven financial modeling and transparency systems.',
+    problemStatements: [
+      "FNP01: Financial Inclusion Risk Assessment for Informal Sector Workers",
+      "FNP02: Real-Time Small Business Cash Flow Volatility Prediction",
+      "FNP03: Transparent Public Fund Utilization Tracking",
+      "FNP04: AI-Driven Detection of Insider Trading Signals",
+      "FNP05 (Alactic AGI Integrated): Automated Structuring of Regulatory Filings"
+    ]
+  },
+  {
+    id: 5,
+    name: 'Healthcare',
+    image: img5,
+    theme: 'Healthcare',
+    description: 'Healthcare intelligence systems for prediction and optimization.',
+    problemStatements: [
+      "HCP01: Early Detection of Lifestyle Disease Risk",
+      "HCP02: Rural Diagnostic Accessibility",
+      "HCP03: Hospital Resource Allocation Optimization",
+      "HCP04: Pharmaceutical Supply Chain Transparency",
+      "HCP05 (Alactic AGI Integrated): Clinical Research Data Grounding"
+    ]
+  },
+  {
+    id: 6,
+    name: "Shardeum's Special Web3",
+    image: img6,
+    theme: "Web3 - Sponsor Track",
+    description: "Decentralized transparency and blockchain innovation track.",
+    problemStatements: [
+      "W3P01: Decentralized Academic Credential Verification",
+      "W3P02: Transparent Agricultural Produce Tracking",
+      "W3P03: Community-Based Decentralized Energy Trading",
+      "W3P04: Tamper-Proof Public Grievance Systems",
+      "W3P05 (Alactic AGI Integrated): Decentralized Verification of AI Training Data Provenance"
+    ]
+  }
+];
 
-  ];
+
 
   const openPopup = (exhibitor) => {
     setSelectedExhibitor(exhibitor);
@@ -190,7 +227,20 @@ className={`exhibitor-card ${exhibitor.id === 6 ? 'special-track' : ''} ${hovere
                       <span></span>
                     </div>
                   </div>
-                  <p className="popup-text">{selectedExhibitor.problemStatement}</p>
+<div className="problem-list">
+  {selectedExhibitor.problemStatements.map((ps, index) => (
+    <div
+      key={index}
+      className={`problem-item ${
+        ps.includes("Alactic") ? "agi-highlight" : ""
+      } ${
+        selectedExhibitor.id === 6 ? "web3-highlight" : ""
+      }`}
+    >
+      {ps}
+    </div>
+  ))}
+</div>
 
                   <div className="popup-stats">
                     <div className="stat-item">
