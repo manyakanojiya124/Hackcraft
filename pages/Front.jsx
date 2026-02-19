@@ -6,6 +6,7 @@ import Profile from './Profile';
 import About from './About';
 import Epic from './Epic';
 import Location from './Location';
+import AnnouncementPopup from '../src/components/Announcementpopup';
 import img200 from '../images/200.png';
 import img201 from '../images/201.png';
 import img510 from '../images/2.png';
@@ -70,6 +71,10 @@ function CountdownTimer({ targetDate }) {
 function Front() {
   return (
     <div id='home' className="front-wrapper">
+
+      {/* Announcement Popup */}
+      <AnnouncementPopup />
+
       <div className="front-container">
 
         {/* Background */}
@@ -98,37 +103,38 @@ function Front() {
             <div className="event-date">
               28th-29th MARCH 2026
             </div>
-        {/* ===== ACTION BUTTONS ABOVE TIMELINE ===== */}
-        <div className="action-buttons-section">
 
-          <a
-            href="https://unstop.com/o/sHkeOP0?lb=K9UelnkJ&utm_medium=Share&utm_source=gitmgur42672&utm_campaign=Online_coding_challenge"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="box-btn"
-          >
-            Register Now
-          </a>
+            {/* ===== ACTION BUTTONS ABOVE TIMELINE ===== */}
+            <div className="action-buttons-section">
 
-          <a
-            href="/Hackcraft 3.0 Welcome Participants.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="box-btn"
-          >
-            Welcome Kit
-          </a>
+              <a
+                href="https://unstop.com/o/sHkeOP0?lb=K9UelnkJ&utm_medium=Share&utm_source=gitmgur42672&utm_campaign=Online_coding_challenge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="box-btn"
+              >
+                Register Now
+              </a>
 
-          <a
-            href="https://chat.whatsapp.com/CV9PIzg73AM09ElbeUdvkg"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="box-btn whatsapp-btn"
-          >
-            <i className="fa fa-whatsapp"></i> WhatsApp Updates
-          </a>
+              <a
+                href="/Hackcraft 3.0 Welcome Participants.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="box-btn"
+              >
+                Welcome Kit
+              </a>
 
-        </div>
+              <a
+                href="https://chat.whatsapp.com/CV9PIzg73AM09ElbeUdvkg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="box-btn whatsapp-btn"
+              >
+                <i className="fa fa-whatsapp"></i> WhatsApp Updates
+              </a>
+
+            </div>
 
             <CountdownTimer targetDate="2026-03-28T00:00:00" />
 
